@@ -1,0 +1,168 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+
+#canvas-container {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.page1 {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+
+.hidden {
+  display: none !important;
+  /* visibility: ; */
+  /* visibility: hidden; */
+}
+
+.pagecolorchange {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+#startbutton {
+  border-radius: 10px;
+  background-color: #faf9f0;
+  color:rgb(209, 147, 180);
+  border-color:rgb(209, 147, 180);
+  animation: moveDownUp 2s infinite, scaleAnimation 2s infinite;
+  position: absolute;
+  justify-content: center;
+  z-index: 5;
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+  top: 80%;
+  text-shadow: 
+
+  -1px  1px 0 #000,
+   1px  1px 0 #000;
+
+}
+#title{
+position: absolute;
+animation: moveUpDown 2s infinite;
+left:41%;
+top:23%;
+
+}
+
+#startbutton:hover {
+  background-color:rgb(209, 147, 180); /* 设置悬停时按钮的背景颜色 */
+  color:#faf9f0;
+}
+
+@keyframes moveUpDown {
+  0% {
+      transform: translateY(0); 
+  }
+  50% {
+      transform: translateY(20px); 
+  }
+  100% {
+      transform: translateY(0); 
+  }
+}
+@keyframes moveDownUp {
+  0% {
+      transform: translateY(0); 
+  }
+  50% {
+      transform: translateY(-20px); 
+  }
+  100% {
+      transform: translateY(0); 
+  }
+}
+
+
+@keyframes scaleAnimation {
+  0% {
+      transform: scale(1)
+  }
+
+  50% {
+      transform: scale(0.9)
+  }
+
+  to {
+      transform: scale(1)
+  }
+}
+
+#phone{
+  position: fix;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  animation: moveUpDown 2s infinite;
+}
+
+#cover{
+  position: absolute;
+  z-index: 1;
+  left:5%;
+  top:40%;
+  animation: moveUpDown 2s infinite, scaleAnimation 2s infinite;
+}
+#cover1{
+  position: absolute;
+  z-index: 1;
+  left:72%;
+  top:40%;
+  animation: moveUpDown 2s infinite, scaleAnimation 2s infinite;
+
+
+}
+
+#back{
+  position: absolute;
+  z-index: -2;
+  align-items: center;
+  width: 1400px;
+
+}
+
+#pizza{
+  position: absolute;
+  z-index: 1;
+  align-items: center;
+  animation: moveUpDown 2s infinite;
+  left:40%;
+  top:23%
+
+
+}
+
+#canvas-container1 {
+  position: absolute;
+  left: 38%;
+  top: 54%;
+  z-index: 1;
+  animation: moveUpDown 2s infinite;
+
+}
+
+
+
