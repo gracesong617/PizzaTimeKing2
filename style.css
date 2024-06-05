@@ -1,21 +1,25 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
+  width: 1400px;
+  height: 800px;
 }
+
 canvas {
   display: block;
 }
 
 #canvas-container {
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -1;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
 }
 
 .page1 {
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -31,7 +35,7 @@ canvas {
 }
 
 .pagecolorchange {
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -42,8 +46,8 @@ canvas {
 #startbutton {
   border-radius: 10px;
   background-color: #faf9f0;
-  color:rgb(209, 147, 180);
-  border-color:rgb(209, 147, 180);
+  color: rgb(209, 147, 180);
+  border-color: rgb(209, 147, 180);
   animation: moveDownUp 2s infinite, scaleAnimation 2s infinite;
   position: absolute;
   justify-content: center;
@@ -54,68 +58,71 @@ canvas {
   font-style: normal;
   font-size: 40px;
   top: 80%;
-  text-shadow: 
+  text-shadow:
 
-  -1px  1px 0 #000,
-   1px  1px 0 #000;
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 
 }
-#title{
-  display: block;
-  align-items: center;
-  justify-content: center;
-position: absolute;
-animation: moveUpDown 2s infinite;
 
-top:23%;
-
-
+#title {
+  position: absolute;
+  animation: moveUpDown 2s infinite;
+  top: 23%;
+  margin-top: 0%;
+  margin-left: 15px;
 }
 
 #startbutton:hover {
-  background-color:rgb(209, 147, 180); /* 设置悬停时按钮的背景颜色 */
-  color:#faf9f0;
+  background-color: rgb(209, 147, 180);
+  /* 设置悬停时按钮的背景颜色 */
+  color: #faf9f0;
 }
 
 @keyframes moveUpDown {
   0% {
-      transform: translateY(0); 
+    transform: translateY(0);
   }
+
   50% {
-      transform: translateY(20px); 
+    transform: translateY(20px);
   }
+
   100% {
-      transform: translateY(0); 
+    transform: translateY(0);
   }
 }
+
 @keyframes moveDownUp {
   0% {
-      transform: translateY(0); 
+    transform: translateY(0);
   }
+
   50% {
-      transform: translateY(-20px); 
+    transform: translateY(-20px);
   }
+
   100% {
-      transform: translateY(0); 
+    transform: translateY(0);
   }
 }
 
 
 @keyframes scaleAnimation {
   0% {
-      transform: scale(1)
+    transform: scale(1)
   }
 
   50% {
-      transform: scale(0.9)
+    transform: scale(0.9)
   }
 
   to {
-      transform: scale(1)
+    transform: scale(1)
   }
 }
 
-#phone{
+#phone {
   position: absolute;
   display: block;
   align-items: center;
@@ -124,50 +131,49 @@ top:23%;
   animation: moveUpDown 2s infinite;
 }
 
-#cover{
+#cover {
   position: absolute;
   display: block;
   align-items: center;
   justify-content: center;
   z-index: 1;
-  left:5%;
+  left: 5%;
   display: block;
-  top:40%;
+  top: 40%;
   animation: moveUpDown 2s infinite, scaleAnimation 2s infinite;
 }
-#cover1{
+
+#cover1 {
   align-items: center;
   justify-content: center;
   position: absolute;
   display: block;
   z-index: 1;
-right:5%;
-  top:40%;
+  right: 5%;
+  top: 40%;
   animation: moveUpDown 2s infinite, scaleAnimation 2s infinite;
 
 
 }
 
-#back{
+#back {
   display: block;
-  position: absolute;
+  position: fixed;
   z-index: -2;
   align-items: center;
   width: 1600px;
 
 }
 
-#pizza{
+#pizza {
 
-  align-items: center;
-  justify-content: center;
-  position: absolute;
   display: block;
-  z-index: 1;
+  z-index: 2;
   align-items: center;
   animation: moveUpDown 2s infinite;
-  left:40%;
-  top:23%
+
+  margin-top: 40px;
+  margin-left: 0px;
 }
 
 #canvas-container1 {
@@ -177,7 +183,7 @@ right:5%;
   justify-content: center;
   z-index: 1;
   animation: moveUpDown 2s infinite;
-  top:54%;
+  top: 54%;
 
 }
 
@@ -188,11 +194,11 @@ right:5%;
   left: 4%;
   top: 5%;
   z-index: 1;
- 
+
 }
 
 
-#normal{
+#normal {
   position: absolute;
   z-index: 1;
   left: 76%;
@@ -200,7 +206,7 @@ right:5%;
   animation: moveUpDown 2s infinite;
 }
 
-#eat{
+#eat {
   position: absolute;
   z-index: 1;
   left: 89%;
@@ -210,7 +216,7 @@ right:5%;
 
 
 
-#pink{
+#pink {
   position: absolute;
   z-index: 1;
   left: 3%;
@@ -218,7 +224,7 @@ right:5%;
 
 }
 
-#pink2{
+#pink2 {
   position: absolute;
   z-index: 1;
   left: 3%;
@@ -226,7 +232,7 @@ right:5%;
 
 }
 
-#arrow{
+#arrow {
   position: absolute;
   z-index: 1;
   left: 84%;
@@ -235,12 +241,12 @@ right:5%;
 }
 
 
-#score{
+#score {
   border-radius: 10px;
   background-color: #faf9f0;
-  border-color:rgb(209, 147, 180);
+  border-color: rgb(209, 147, 180);
   padding: 6px;
-  border:solid 2px;
+  border: solid 2px;
   position: absolute;
   z-index: 1;
   left: 78%;
@@ -250,15 +256,16 @@ right:5%;
   font-weight: 400;
   font-style: normal;
   font-size: 35px;
-  color:rgb(209, 147, 180);;
-  text-shadow: 
+  color: rgb(209, 147, 180);
+  ;
+  text-shadow:
 
-  -1px  1px 0 #000,
-   1px  1px 0 #000;
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 
 }
 
-#hint{    
+#hint {
   border-radius: 10px;
   padding: 14px 0px 18px 30px;
   background-color: #faf9f0;
@@ -276,17 +283,17 @@ right:5%;
   font-size: 28px;
   line-height: 1.5;
   color: rgb(209, 147, 180);
-  text-shadow: 
-  -1px  1px 0 #000,
-  1px  1px 0 #000;
+  text-shadow:
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 
-#backbutton{
+#backbutton {
   border-radius: 10px;
   background-color: #faf9f0;
-  color:rgb(209, 147, 180);
-  border-color:rgb(209, 147, 180);
+  color: rgb(209, 147, 180);
+  border-color: rgb(209, 147, 180);
   animation: moveDownUp 2s infinite, scaleAnimation 2s infinite;
   position: absolute;
   justify-content: center;
@@ -297,20 +304,21 @@ right:5%;
   font-style: normal;
   font-size: 40px;
   top: 80%;
-  left:82%;
-  text-shadow: 
+  left: 82%;
+  text-shadow:
 
-  -1px  1px 0 #000,
-   1px  1px 0 #000;
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 
 }
 
 #backbutton:hover {
-  background-color:rgb(209, 147, 180); /* 设置悬停时按钮的背景颜色 */
-  color:#faf9f0;
+  background-color: rgb(209, 147, 180);
+  /* 设置悬停时按钮的背景颜色 */
+  color: #faf9f0;
 }
 
-#happy{
+#happy {
   position: absolute;
   z-index: 1;
   left: 36%;
@@ -320,38 +328,41 @@ right:5%;
 
 @keyframes moveLeftRight {
   0% {
-    transform: translateX(0); 
+    transform: translateX(0);
   }
+
   65% {
-    transform: translateX(400px); 
+    transform: translateX(400px);
   }
+
   100% {
-    transform: translateX(0); 
+    transform: translateX(0);
   }
-}
-#bye{
-    /* border-radius: 10px; */
-    /* background-color: #faf9f0; */
-    color: rgb(209, 147, 180);
-    /* border: solid 2px; */
-    padding: 5px;
-    border-color: rgb(209, 147, 180);
-    /* animation: moveDownUp 2s infinite, scaleAnimation 2s infinite; */
-    position: absolute;
-    justify-content: center;
-    z-index: 5;
-    font-family: "Pixelify Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 61px;
-    top: 4%;
-    left: 15%;
-    text-shadow: -1px  1px 0 #000,
-   1px  1px 0 #000;
 }
 
-#againbutton{
+#bye {
+  /* border-radius: 10px; */
+  /* background-color: #faf9f0; */
+  color: rgb(209, 147, 180);
+  /* border: solid 2px; */
+  padding: 5px;
+  border-color: rgb(209, 147, 180);
+  /* animation: moveDownUp 2s infinite, scaleAnimation 2s infinite; */
+  position: absolute;
+  justify-content: center;
+  z-index: 5;
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 61px;
+  top: 4%;
+  left: 15%;
+  text-shadow: -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+#againbutton {
   border-radius: 10px;
   background-color: #faf9f0;
   color: rgb(209, 147, 180);
@@ -367,21 +378,22 @@ right:5%;
   font-size: 40px;
   top: 85%;
   left: 46%;
-  text-shadow: -1px  1px 0 #000,
- 1px  1px 0 #000;
+  text-shadow: -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 #againbutton:hover {
-  background-color:rgb(209, 147, 180); /* 设置悬停时按钮的背景颜色 */
-  color:#faf9f0;
+  background-color: rgb(209, 147, 180);
+  /* 设置悬停时按钮的背景颜色 */
+  color: #faf9f0;
 }
 
 
-#pizza1{
-	position: absolute;
+#pizza1 {
+  position: absolute;
 
   left: 32%;
-  width:200px;
+  width: 200px;
   top: 37%;
   animation: moveUpDown 2s infinite;
   z-index: 1;
@@ -391,15 +403,17 @@ right:5%;
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-20px);
   }
+
   100% {
     transform: translateY(0);
   }
 }
 
-#cake1{
+#cake1 {
   position: absolute;
   top: 18%;
   width: 219px;
@@ -407,7 +421,7 @@ right:5%;
   animation: moveUpDown 2s infinite;
 }
 
-#cake2{
+#cake2 {
   position: absolute;
   top: 18%;
   width: 200px;
@@ -415,7 +429,7 @@ right:5%;
   animation: moveUpDown 2s infinite;
 }
 
-#purin1{
+#purin1 {
   position: absolute;
   top: 43%;
   width: 200px;
@@ -424,6 +438,18 @@ right:5%;
 }
 
 
-#main-canvas{
+#main-canvas {
   display: block;
+}
+
+#tittle-container {
+  display: block;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 25%;
+  z-index: 1;
+  width: 280px;
+  height: 150px;
+  top:20%;
 }
