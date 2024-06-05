@@ -17,10 +17,10 @@ function preload() {
 
 function setup() {
 
-    const myCanvas = createCanvas(320,240);
+    const myCanvas = createCanvas(332,230);
     myCanvas.parent('canvas-container1');
     video = createCapture(VIDEO, { flipped: true }); // flipped the video
-    video.size(320,240);
+    video.size(332,230);
     video.hide();
 
     faceMesh.detectStart(video, gotFaces);

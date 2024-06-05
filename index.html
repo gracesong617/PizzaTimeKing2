@@ -1,36 +1,40 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ml5.js handPose p5 Webcam Example</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.2/p5.min.js"></script>
-    <script src="https://unpkg.com/ml5@0.20.0-alpha.4/dist/ml5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.sound.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
-  <body>
-    <section id="page1" class="page1">
-      <img id = "back" src="media/cover.png">
-      <button class = "button" id = "startbutton" onclick="window.location.href='game.html'">Game Start</button>
 
-        <img  id="phone" src="media/phone.png" width="500">
-        <img  id="cover" src="media/cover.gif" width="300" draggable="true">
-        <img  id="pizza" src="media/pizza.gif" width="80">
-        <img  id="title" src="media/title.png" width="250">
-        <img  id="cover1" src="media/cover.gif" width="300">
-        <div id="canvas-container1"></div>
-    
-     
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ml5.js handPose p5 Webcam Example</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.2/p5.min.js"></script>
+  <script src="https://unpkg.com/ml5@0.20.0-alpha.4/dist/ml5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.sound.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+
+  <div id="main-canvas">
+    <section id="page1" class="page1">
+      <img id="back" src="media/cover.png">
+      <button class="button" id="startbutton" onclick="window.location.href='game.html'">Game Start</button>
+
+      <img id="phone" src="media/phone.png" width="500">
+      <img id="cover" src="media/cover.gif" width="300" draggable="true">
+      <div id="tittle-container">
+        <img id="pizza" src="media/pizza.gif" width="80">
+        <img id="title" src="media/title.png" width="250">
+      </div>
+      <img id="cover1" src="media/cover.gif" width="300">
+      <div id="canvas-container1"></div>
     </section>
-  
-    <!-- <script src="sketch.js"></script> -->
-    <script src="kirby.js"></script>
-  </body>
+  </div>
+
+  <!-- <script src="sketch.js"></script> -->
+  <script src="kirby.js"></script>
+</body>
+
 </html>

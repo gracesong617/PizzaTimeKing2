@@ -1,43 +1,23 @@
-const startButton = document.getElementById("startbutton");
-const backButton = document.getElementById("backbutton");
-
-const page1 = document.getElementById("page1");
-const pageplay = document.getElementById("pageplay");
-
-window.addEventListener("load", () => {
-  page1.classList.remove("hidden");
-  pageplay.classList.add("hidden");
-})
-
-document.addEventListener("DOMContentLoaded", function () {
-  startButton.addEventListener("click", function () {
-    page1.classList.add("hidden");
-    pageplay.classList.remove("hidden");
-  });
-
-  backButton.addEventListener("click", function () {
-    page1.classList.remove("hidden");
-    pageplay.classList.add("hidden");
-  });
-})
-
 let faceMesh;
 let faces = [];
 let eaterNormal;
 let eaterEat;
 let foodsize = 90;
+let font;
 
 let cam;
 let img;
 let segmenter;
 let segmentationData = [];
 
+let imageSize = 100;
+  
 const options = { maxFaces: 1, refineLandmarks: false, flipHorizontal: false };
 
 const goodArray = [
-  "media/cake1.gif",
-  "media/cake2.gif",
-  "media/purin.gif",
+  "media/pizza.gif",
+  "media/pizza2.png",
+
 ]
 
 const badArray = [
@@ -52,9 +32,11 @@ let badImages = [];
 let score = 0;
 
 
+
 function preload() {
   eaterNormal = loadImage('media/normal.png');
   eaterEat = loadImage('media/eat.png');
+  font = loadFont('media/text.ttf');
 
   for (let i = 0; i < goodArray.length; i++) {
     goodImages.push(loadImage(goodArray[i]));
@@ -71,15 +53,16 @@ function preload() {
 }
 
 function setup() {
-  const myCanvas = createCanvas(1300, 720);
+  const myCanvas = createCanvas(windowWidth, windowHeight);
   myCanvas.parent('canvas-container');
-  background(255);
+
 
   cam = createCapture(VIDEO);
   cam.size(width, height);
   cam.hide();
 
   faceMesh.detectStart(cam, gotFaces);
+  textFont(font);
 }
 function draw() {
     image(cam, 0, 0, 960, 720);
@@ -90,22 +73,16 @@ function draw() {
     textSize(18);
     fill(255);
     noStroke();
-    rect(1000, 250, 200, 200);
-    image(eaterNormal, 1000, 250, 200, 200);
+
+
   
-    rect(1140, 502, 40, 20);
-    fill(0);
-    text(`Your score: ${score}`, 1040, 520);
-    textSize(16);
-    text('Open your mouth to control the size and eat food!', 980, 220);
   
     if (faces.length > 0 && faces[0].lips && faces[0].lips.keypoints) {
       let mouthCenterX = faces[0].lips.keypoints[10].x;
       let mouthCenterY = faces[0].lips.keypoints[10].y;
       let mouthGap = faces[0].lips.keypoints[24].y - faces[0].lips.keypoints[15].y;
       // let imageSize = map(mouthGap, 0, 30, 50, 200);
-      let imageSize = 100;
-  
+
       if (mouthGap > 15) {
         image(eaterEat, mouthCenterX + imageSize*1.2, mouthCenterY + imageSize, imageSize, imageSize);
       } else {
@@ -126,6 +103,10 @@ function draw() {
           goodFoods[i].y = Math.random() * 300 + 100;
           goodeat.play();
           score++;
+          if (imageSize < 100) {
+            imageSize += 15;
+          }
+
         }
       }
   
@@ -135,9 +116,11 @@ function draw() {
           badFoods[i].y = Math.random() * 300 + 100;
           badeat.play();
           score -= 2;
+          imageSize -= 15;
         }
       }
     }
+    updateScore();
   }
 
   function gotFaces(results) {
@@ -159,4 +142,26 @@ function draw() {
   
   function resetImageSize() {
     imageSize = 50;
+  }
+
+
+  function updateScore() {
+    document.getElementById('score').innerText = 'Your score: ' + score + ' / 10';
+
+    //if score is larger than 5, change the page to end.html
+    if (score > 9) {
+        setTimeout(() => {
+            window.location.href = 'end.html';
+        }, 2500); // 5000 milliseconds = 5 seconds
+        textSize(50);
+        fill(209, 147, 180)
+        stroke(0)
+        strokeWeight(5)
+        text('Kirby is full : )', 350, 350);
+        
+
+    }
+  }
+  function windowResized() {
+    resizeCanvas(windowWidth, windowHeight); // Resize the canvas to match the new window dimensions
   }
