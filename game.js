@@ -53,7 +53,7 @@ function preload() {
 }
 
 function setup() {
-  const myCanvas = createCanvas(windowWidth, windowHeight);
+  const myCanvas = createCanvas(960,720);
   myCanvas.parent('canvas-container');
 
 

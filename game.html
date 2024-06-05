@@ -1,8 +1,7 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,22 +13,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css" />
-    
-  </head>
-  <body>
 
-    <img id = "back" src="media/cover.png" width="200">
+</head>
 
-      <button id="backbutton" class="button" onclick="window.location.href='index.html'">Back</button>
-      <div id="canvas-container"></div>
-      <img src="media/normal.png" id="normal" width="100">
-      <img src="media/eat.png" id="eat" width="100">
-    <img src="media/arrow.png" id="arrow" width="60">
-    <img src="media/pink.png" id="pink" width="985">
-    <img src="media/pink2.png" id="pink2" width="985">
-      <div id="score">Your score: 0</div>
-      <p id="hint">Open your mouth to control the size and eat food ! <br>Be careful of the ghost👻...</p>
+<body>
+
+    <img id="back" src="media/cover.png" width="200">
+    <div id="play">
+        <div id="canvas-container"></div>
+        <img src="media/pink.png" id="pink" width="985">
+        <img src="media/pink2.png" id="pink2" width="985">
+    </div>
+   
+    <div id="playhint">
+        <img src="media/normal.png" id="normal" width="100">
+        <img src="media/eat.png" id="eat" width="100">
+        <img src="media/arrow.png" id="arrow" width="60">
+        <div id="score">Your score: 0</div>
+        <p id="hint">Open your mouth to control the size and eat food ! <br>Be careful of the ghost👻...</p>
+        <button id="backbutton" class="button" onclick="window.location.href='index.html'">Back</button>
+    </div>
 
     <script src="game.js"></script>
-  </body>
+</body>
+
 </html>

@@ -162,6 +162,7 @@ canvas {
   z-index: -2;
   align-items: center;
   width: 1600px;
+  height: 800px;
 
 }
 
@@ -219,16 +220,17 @@ canvas {
 #pink {
   position: absolute;
   z-index: 1;
-  left: 3%;
-  top: 4%;
+
+  margin-top: 2%;
+  margin-left: 3%;
 
 }
 
 #pink2 {
   position: absolute;
   z-index: 1;
-  left: 3%;
-  top: 86%;
+margin-top: 50%;
+margin-left: 3%;
 
 }
 
@@ -249,7 +251,7 @@ canvas {
   border: solid 2px;
   position: absolute;
   z-index: 1;
-  left: 78%;
+  left: 75%;
   top: 70%;
   font-family: "Pixelify Sans", sans-serif;
   font-optical-sizing: auto;
@@ -304,7 +306,7 @@ canvas {
   font-style: normal;
   font-size: 40px;
   top: 80%;
-  left: 82%;
+  left: 81%;
   text-shadow:
 
     -1px 1px 0 #000,
@@ -451,5 +453,21 @@ canvas {
   z-index: 1;
   width: 280px;
   height: 150px;
-  top:20%;
+  top: 20%;
+}
+
+
+#playhint {
+  width: 360px;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5%;
+}
+
+#play{
+  width: 970px;
+  height: 730px;
+  justify-content: center;
+  align-items: center;
 }
