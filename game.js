@@ -5,10 +5,9 @@ let eaterEat;
 let foodsize = 90;
 let font;
 
+let maskImage;
+
 let cam;
-let img;
-let segmenter;
-let segmentationData = [];
 
 let imageSize = 100;
   
@@ -36,6 +35,9 @@ let score = 0;
 function preload() {
   eaterNormal = loadImage('media/normal.png');
   eaterEat = loadImage('media/eat.png');
+
+  maskImage = loadImage("media/mask2.png");
+
   font = loadFont('media/text.ttf');
 
   for (let i = 0; i < goodArray.length; i++) {
@@ -53,9 +55,10 @@ function preload() {
 }
 
 function setup() {
-  const myCanvas = createCanvas(960,720);
+  const myCanvas = createCanvas(960, windowHeight);
   myCanvas.parent('canvas-container');
 
+  maskImage.resize(width*3+50, width*3); // 1:1 ratio
 
   cam = createCapture(VIDEO);
   cam.size(width, height);
@@ -64,11 +67,17 @@ function setup() {
   faceMesh.detectStart(cam, gotFaces);
   textFont(font);
 }
+
+
+
 function draw() {
     image(cam, 0, 0, 960, 720);
+
+    
+
     // a transparent layer
-    fill(0, 0, 0, 180); 
-    rect(0, 0, 960, 720);
+    // fill(0, 0, 0, 180); 
+    // rect(0, 0, 960, 720);
   
     textSize(18);
     fill(255);
@@ -119,15 +128,18 @@ function draw() {
           imageSize -= 15;
         }
       }
+    }else{
+      background(0);
     }
+    applyMask();
     updateScore();
-  }
+}
 
-  function gotFaces(results) {
-    faces = results;
-  }
+function gotFaces(results) {
+  faces = results;
+}
   
-  function generateFoodPositions(count) {
+function generateFoodPositions(count) {
     const foodPositions = [];
   
     for (let i = 0; i < count; i++) {
@@ -138,18 +150,18 @@ function draw() {
     }
   
     return foodPositions;
-  }
+}
   
-  function resetImageSize() {
+function resetImageSize() {
     imageSize = 50;
-  }
+}
 
 
-  function updateScore() {
-    document.getElementById('score').innerText = 'Your score: ' + score + ' / 10';
+function updateScore() {
+  document.getElementById('score').innerText = 'Your score: ' + score + ' / 10';
 
-    //if score is larger than 5, change the page to end.html
-    if (score > 9) {
+  //if score is larger than 5, change the page to end.html
+  if (score > 9) {
         setTimeout(() => {
             window.location.href = 'end.html';
         }, 2500); // 5000 milliseconds = 5 seconds
@@ -158,10 +170,19 @@ function draw() {
         stroke(0)
         strokeWeight(5)
         text('Kirby is full : )', 350, 350);
-        
+  }
+}
+  
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight); // Resize the canvas to match the new window dimensions
+}
 
-    }
+function applyMask() {
+  if (faces.length > 0 && faces[0].lips && faces[0].lips.keypoints) {
+    push();
+    blendMode(MULTIPLY);
+    imageMode(CENTER);
+    image(maskImage, faces[0].lips.keypoints[10].x + imageSize*1.8, faces[0].lips.keypoints[10].y + imageSize*1.6);
+    pop();
   }
-  function windowResized() {
-    resizeCanvas(windowWidth, windowHeight); // Resize the canvas to match the new window dimensions
-  }
+}
